@@ -4,6 +4,7 @@
   var ID_Input_ShotBeforReload   ="ShotBeforReload";
   var ID_Input_IsJumpAllow       ="IsJumpAllow";
   var ID_Input_SpawnOnBuilding   ="SpawnOnBuilding";
+  var ID_Input_BulletRicochet    ="BulletRicochet"; 
   var ID_Div_Check               ="CheckBoxInGameStyle"
   var ID_Div_Gene                ="GeneralGameInfo"
   var ID_Div_Gene2               ="GeneralGameInfo2"
@@ -26,6 +27,8 @@
   var Input_IsJumpAllow       = document.createElement("INPUT");
   var Label_SpawnOnBuilding   = document.createElement("LABEL");
   var Input_SpawnOnBuilding   = document.createElement("INPUT");
+  var Label_BulletRicochet    = document.createElement("LABEL");
+  var Input_BulletRicochet    = document.createElement("INPUT");
   var Label_FriendlyFireKills = document.createElement("LABEL");
   var Input_FriendlyFireKills = document.createElement("INPUT");
 
@@ -42,6 +45,7 @@
   var Text_Input_ShotBeforReload= document.createTextNode("# of shots before reload");
   var Text_IsJumpAllow          = document.createTextNode("Allow to jump");
   var Text_SpawnOnBuilding      = document.createTextNode("Allow to spawn on building");
+  var Text_BulletRicochet       = document.createTextNode("Allow bullets to ricochet");
 
   var Text_FriendlyFireKills    = document.createTextNode("Friendly fire kills you");
 
@@ -67,6 +71,9 @@
 
   Label_SpawnOnBuilding.setAttribute("class"    , "GreenRedButton");
   Label_SpawnOnBuilding.setAttribute("for"   , ID_Input_SpawnOnBuilding);
+
+  Label_BulletRicochet.setAttribute("class"    , "GreenRedButton");
+  Label_BulletRicochet.setAttribute("for"   , ID_Input_BulletRicochet);
 
   Label_FriendlyFireKills.setAttribute("class"    , "GreenRedButton");
   Label_FriendlyFireKills.setAttribute("for"   , ID_Input_FriendlyFireKills);
@@ -108,6 +115,12 @@
   Input_SpawnOnBuilding.setAttribute("id" , ID_Input_SpawnOnBuilding);
   Input_SpawnOnBuilding.setAttribute("value" , "-sb"); //-sb if checked
 
+  Input_BulletRicochet.setAttribute("type" , "checkbox");
+  Input_BulletRicochet.setAttribute("name" , ID_Input_BulletRicochet);
+  Input_BulletRicochet.setAttribute("id" , ID_Input_BulletRicochet);
+  Input_BulletRicochet.setAttribute("value" , "+r"); //+r if checked
+  Input_BulletRicochet.setAttribute("checked",'checked');
+
   Input_FriendlyFireKills.setAttribute("type" , "checkbox");
   Input_FriendlyFireKills.setAttribute("name" ,ID_Input_FriendlyFireKills);
   Input_FriendlyFireKills.setAttribute("id" , ID_Input_FriendlyFireKills);
@@ -120,6 +133,7 @@
   Label_ShotBeforReload.appendChild(Text_Input_ShotBeforReload);
   Label_IsJumpAllow.appendChild(Text_IsJumpAllow);
   Label_SpawnOnBuilding.appendChild(Text_SpawnOnBuilding);
+  Label_BulletRicochet.appendChild(Text_BulletRicochet);
   Label_FriendlyFireKills.appendChild(Text_FriendlyFireKills);
 
   Entry_GameType1.appendChild(Text_GameType1);
@@ -138,6 +152,8 @@
   Div_Check.appendChild(Label_IsJumpAllow);
   Div_Check.appendChild(Input_SpawnOnBuilding);
   Div_Check.appendChild(Label_SpawnOnBuilding);
+  Div_Check.appendChild(Input_BulletRicochet);
+  Div_Check.appendChild(Label_BulletRicochet);
   Div_Check.appendChild(Input_FriendlyFireKills);
   Div_Check.appendChild(Label_FriendlyFireKills);
 

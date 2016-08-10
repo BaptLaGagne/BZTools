@@ -67,7 +67,7 @@
 	Input_WithRandBuildingHeigh.setAttribute("checked",'checked');
 
 	//Slide bar
-	var default_density = 7;
+	var default_density = 5;
 	Input_BuildDensity.setAttribute("type" , "range");
 	Input_BuildDensity.setAttribute("id",ID_BuildDensity );
 	Input_BuildDensity.setAttribute("Name", ID_BuildDensity);
@@ -85,9 +85,9 @@
 	//text entry
   	Input_WorldSize.setAttribute("type" , "number");
   	Input_WorldSize.setAttribute("min" , 5);
-  	Input_WorldSize.setAttribute("max" , 2000);
+  	Input_WorldSize.setAttribute("max" , 1000);
   	Input_WorldSize.setAttribute("id", ID_WorldSize);
-  	Input_WorldSize.setAttribute("value", 800);//-worldsize 800
+  	Input_WorldSize.setAttribute("value", 250);//-worldsize 800
   	Input_WorldSize.setAttribute("name" , ID_WorldSize);
 
 	//DIV

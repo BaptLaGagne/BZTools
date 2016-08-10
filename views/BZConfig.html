@@ -5,7 +5,13 @@
 <section class="container">
 
     <form role="form" action="/BZConfig" method="post" id="ConfigForm" >
-        <h1>Server options</h1>
+        <h1>BZFlag server configurator</h1>
+         <fieldset class="form-group">
+            <legend>Server options</legend>
+            <div  id="serveropt" class="form-check">
+                 <!-- showServeroptions-->
+            </div>
+        </fieldset>
         <fieldset class="form-group">
             <legend>GAME STYLES</legend>
             <div  id="gameStyle" class="form-check">
@@ -44,6 +50,7 @@
 
 <!-- Scripts inclusion -->
 <script src="javascripts/Functions.js"   type="text/javascript"></script>
+<script src="javascripts/buildServerOptions.js" type="text/javascript"></script>
 <script src="javascripts/buildGameStyle.js" type="text/javascript"></script>
 <script src="javascripts/buildFlagList.js" type="text/javascript"></script>
 <script src="javascripts/buildGenFlagOpt.js"  type="text/javascript"></script>

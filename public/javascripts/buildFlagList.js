@@ -1,5 +1,8 @@
 
-      var JsonData
+      var JsonData;
+      var ParentGood="goodflags";
+      var ParentBad ="badflags";
+
       loadJSON("data/flagList.json", function(response) 
       {
   
@@ -8,8 +11,7 @@
        var NbrOfGoodFlags =  JsonData.flags.goodflags.length;
        var NbrOfBadFlags  = JsonData.flags.badflags.length ;
 
-       var ParentGood="goodflags"
-       var ParentBad ="badflags"
+
 
 
       for( var i = 0 ; i < NbrOfGoodFlags ; i++ )
@@ -29,7 +31,6 @@
         NewInput.setAttribute("value"  ,  "f " + JsonData.flags.goodflags[i].abrv );
         NewInput.setAttribute("id"     ,  JsonData.flags.goodflags[i].abrv );
         NewInput.setAttribute("checked",'checked');
-     //   NewInput.setAttribute("onclick", "EventOnFlag()");
 
         NewLabel.appendChild(Text);
         document.getElementById(ParentGood).appendChild(NewInput);
@@ -62,5 +63,6 @@
 
 
      });
+
 
 
