@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+const exec = require('child_process').exec;
+
+var IsServerRan = false;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,25 +12,52 @@ router.get('/', function(req, res, next) {
 
 /* GET BZConfig page. */
 router.get('/BZConfig', function(req, res) {
+
+  if(!IsServerRan){
     res.render('BZConfig');
+  }
+  else{
+    res.render('index');
+
+  }
+
+
 });
 
 /* POST BZConfig page (submit). */
 router.post('/BZConfig', function(req, res) {
 
     res.render('index');
+    var ConfFileName = "bz.cfg";
 
     var Form = req.body;
+
     console.log(Form);
-    WriteConfigFile(Form);
+    WriteConfigFile(Form,ConfFileName);
+    RunServer(Form,ConfFileName);
 
 });
 
 module.exports = router;
+function RunServer(form,filename){
 
-function WriteConfigFile(form){
+ var CMD_Run_Server = "" + form.BZPath + " -conf " + filename;
 
-var filename = 'bz.cfg';
+  exec( CMD_Run_Server, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+  });
+
+IsServerRan=true;
+
+};
+
+function WriteConfigFile(form,filename){
+
 var date = new Date(); 
 var timestamp= date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear() + "  " + date.getHours() + ":" + date.getMinutes();
 
