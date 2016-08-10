@@ -17,7 +17,7 @@ router.get('/BZConfig', function(req, res) {
     res.render('BZConfig');
   }
   else{
-    res.render('index');
+    res.redirect('/');
 
   }
 
@@ -27,7 +27,7 @@ router.get('/BZConfig', function(req, res) {
 /* POST BZConfig page (submit). */
 router.post('/BZConfig', function(req, res) {
 
-    res.render('index');
+    res.redirect('/');
     var ConfFileName = "bz.cfg";
 
     var Form = req.body;
