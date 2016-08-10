@@ -1,0 +1,58 @@
+{ "flags": {
+              "goodflags": [
+                  {"abrv":"A",  "Name":"Agility"},
+                  {"abrv":"CL", "Name":"Cloaking "},
+                  {"abrv":"F",  "Name":"rapid Fire"},
+                  {"abrv":"G",  "Name":"Genocide"},
+                  {"abrv":"GM", "Name":"Guided Missile"},
+                  {"abrv":"IB", "Name":"Invisible Bullett"},
+                  {"abrv":"L",  "Name":"Laser"},
+                  {"abrv":"MG", "Name":"Machine Gun"},
+                  {"abrv":"N",  "Name":"Narrow"},
+                  {"abrv":"OO", "Name":"Oscillation Overthruster  "},
+                  {"abrv":"PZ", "Name":"Phantom Zone"},
+                  {"abrv":"QT", "Name":"QuickTurn"},
+                  {"abrv":"SB", "Name":"Super Bullet"},
+                  {"abrv":"SE", "Name":"SEer"},
+                  {"abrv":"SH", "Name":"SHield "},
+                  {"abrv":"SR", "Name":"SteamRoller"},
+                  {"abrv":"ST", "Name":"STealth"},
+                  {"abrv":"SW", "Name":"ShockWave "},
+                  {"abrv":"T",  "Name":"Tiny"},
+                  {"abrv":"TH", "Name":"THeif"},
+                  {"abrv":"US", "Name":"USeless"},
+                  {"abrv":"V",  "Name":"Velocity "},
+                  {"abrv":"WG", "Name":"WinGs "}
+              ],
+              "badflags": [
+                  {"abrv":"B", "Name":"Blindness"},
+                  {"abrv":"BY", "Name":"BouncY"},
+                  {"abrv":"CB", "Name":"Color Blindess"},
+                  {"abrv":"FO", "Name":"Forward Only"},
+                  {"abrv":"JM", "Name":"JaMming"},
+                  {"abrv":"LT", "Name":"Left Turn only"},
+                  {"abrv":"M", "Name":"Momentum"},
+                  {"abrv":"NJ", "Name":"No Jumping"},
+                  {"abrv":"O", "Name":"Obesity"},
+                  {"abrv":"RC", "Name":"Reverse Controls"},
+                  {"abrv":"RO", "Name":"Reverse Only"},
+                  {"abrv":"RT", "Name":"Right Turn only"},
+                  {"abrv":"TR", "Name":"TRigger happy"},
+                  {"abrv":"WA", "Name":"Wide Angle"}
+              ]
+          }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
