@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="container">
+  <h1>Server is Running</h1>
+  <h2>With parameters :</h2>
+  <pre id="json">{{ServerParameters}}</pre>
+  </br>
+  <div id="Div_KillServer">
+     <form action = "/api/KillBZServer" method = "post" id="Form_KillServer" >
+        <input type="submit" name="KillServer" class="btn btn-primary" value="Kill Server ;(" />
+    </form>
+  </div>
+
+</section>
+<!-- Scripts inclusion -->
+
+</script>
+
+{% endblock %}
