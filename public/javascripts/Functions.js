@@ -3,7 +3,7 @@ function loadJSON(file, callback) {
 
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', file, true); // Replace 'my_data' with the path to your file
+    xobj.open('GET', file, true); 
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -103,7 +103,7 @@ function addFlagLimit(){
     lab2.setAttribute("for",NewNumID)
 
     //Create elements option and attribute for SELECT by reading the List of BZFlag flags
-    loadJSON("data/flagList.json", function(response) 
+    loadJSON("../data/flagList.json", function(response) 
     {
         if(JsonData)
         { 
@@ -133,8 +133,14 @@ function addFlagLimit(){
     document.getElementById(Parent).appendChild(NewDiv);
 
     counter++;
-}    
+}; 
 
+/********************** Save form in local storage when form change ********************/
+/*document.getElementById("ConfigForm").addEventListener('change', function () {
+    alert("change");
+
+}, false);
+*/
 /********************** Prepare Datas for submit (on click on submit)********************/
 //GRRrrrr : uncheck checkbox does not send their state and value to the server 
 //The following is a workaround
@@ -177,7 +183,7 @@ function PrepareDataAndSubmit(frm){
     }
 
   //form submission
-    frm.submit()
+    frm.submit();
 
 }
 
