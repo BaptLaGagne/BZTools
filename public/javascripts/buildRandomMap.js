@@ -117,7 +117,6 @@
  	Div_Density.appendChild(Span_BuildDensity);
  	Div_Density.appendChild(Input_BuildDensity);
 
-
 	document.getElementById(ID_Parent).appendChild(FieldSet_RandomMap);
 	document.getElementById(ID_Parent).appendChild(Div_Size);
 	document.getElementById(ID_Parent).appendChild(Div_Density);
