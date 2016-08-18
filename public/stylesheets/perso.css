@@ -4,44 +4,66 @@
 * { transition-duration: 0.2s; }
 
 body {
-	font-size: 16px;
+	font-size: 1.5em;
 	font-family: 'Raleway', sans-serif !important;
 	background: #424242;
 	color: #EEE;
 
 }
+/*  Hide redirection after 5s  */
+#redirecting {
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-name: hideredirect;
+  position: relative;
+  height: 2em;
+  background-color: red;
+  z-index: 999;
+  overflow:hidden;
+}
+@keyframes hideredirect {
+  0% {
+    height:2em;
+  }
+  50%{
+    height:2em;
+  }
+  51%{
+    height:2.1em;
+  }
+  100% {
+    height: 0em; 
+  }
+}
+
+/*********************************/
 
 legend {
-margin-top: 2em;
 color: #EEE;
-
+font-size: 1.5em;
 }
 
 label {
 	margin: 0.5em 0.5em 0.5em 0.5em;
-}
-
-label.GreenRedButton {
-
-	display: inline-block;
-	margin: 0.25em;
-
-}
-#goodflags input,#badflags input ,#CheckBoxInGameStyle input,#CheckBoxInFlagOpt input, #RM_DivCheck input{
-
-	margin-right: 0.3em;
-	display: none;
-
-}
-
-#ShotPerFlag input ,#GeneralGameInfo input,#GeneralGameInfo2 input{
-
-	display:inline-block;
-	margin-bottom: 1em;
+    font-size: 1em;
 }
 
 input, select, button{
-	color: #424242;
+    color: #424242;
+    width: auto;
+}
+
+input[type='number'] {
+  width: 6ch;
+}
+/*  checkbox green: check ; red : uncheck */
+#goodflags input,#badflags input ,#CheckBoxInGameStyle input,#CheckBoxInFlagOpt input, #RM_DivCheck input{
+	margin-right: 0.3em;
+	display: none;
+}
+#ShotPerFlag input ,#GeneralGameInfo input,#GeneralGameInfo2 input{
+	display:inline-block;
 }
 
 label.GreenRedButton {
@@ -55,22 +77,59 @@ label.GreenRedButton {
 	color: #424242;
 	text-align: center;
 	box-shadow: 1px 1px 2px #EEE;
-
+    margin: 0.25em;
+    font-size: 1em;
 }
 
 label.GreenRedButton:hover   {
 	transform: scale(1.2);
 	transform: rotate(1deg);
-
 }
 
 input:checked + .GreenRedButton {
-
 	background: #C3FC81;
 	border-color: #58891F;
+}
+/* submit button  */
+.btn-primary{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 2em ; 
+
+}
+/******HOME CONTENT**
+***/
+#HomeDiv * {
+color: #424242;
 
 }
 
+/* Loading page */
+.verticalcenter {
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+.loader {
+    margin: auto;
+    width: 50%;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Input range (Slide bar)*/
     input[type='range'] {
         -webkit-appearance: none;
         appearance: none;
