@@ -4,10 +4,10 @@
 
 <section class="container">
 
-    <form role="form" action="/BZConfig" method="post" id="ConfigForm" >
+    <form role="form" action="/api/BZConfig" method="post" id="ConfigForm" >
         <h1>BZFlag server configurator</h1>
          <fieldset class="form-group">
-            <legend>Server options</legend>
+            <legend>SERVER OPTIONS</legend>
             <div  id="serveropt" class="form-check">
                  <!-- showServeroptions-->
             </div>
@@ -23,7 +23,7 @@
         </div>
         <fieldset class="form-group">
             <legend>FLAG CONFIGURATION</legend>
-            <h3> <p align="left">Flag selection</p></h3>
+            <h3> Flag selection </h3>
             <h4> <p align="left">Good Flags</p> </h4>
             <div  id="goodflags" class="form-check">
                 <!-- showGoodFlags -->
@@ -37,23 +37,25 @@
                 <!-- General flag option -->
                 </div>
                 <div id="ShotPerFlag">
-                    <h4> <p align="left" >Limit the number of shots from a particular flag</p> </h4>  
+                     <label for="AddFlag" >Limit the number of shots from a particular flag </label> 
                     <!-- # of shot per flag -->
-                    <input type="button" value="Add flag shot limit" onClick="addFlagLimit('ShotLimitPerFlag');">
+                    <input type="button" id="AddFlag" value="Add flag shot limit" onClick="addFlagLimit('ShotLimitPerFlag');">
                </div>
                 
         </fieldset>
-   <input type="button" name="btn-submit" value="Run Server" id="submit-btn" onclick="return PrepareDataAndSubmit(this.form)"/>
+    <div id="divsubmit">
+   <input type="button" class="btn btn-primary" name="btn-submit" value="Run Server"  onclick="return PrepareDataAndSubmit(this.form)"/>
+   </div>
 </form>
 
 </section>
 
 <!-- Scripts inclusion -->
-<script src="javascripts/Functions.js"   type="text/javascript"></script>
-<script src="javascripts/buildServerOptions.js" type="text/javascript"></script>
-<script src="javascripts/buildGameStyle.js" type="text/javascript"></script>
-<script src="javascripts/buildFlagList.js" type="text/javascript"></script>
-<script src="javascripts/buildGenFlagOpt.js"  type="text/javascript"></script>
-<script src="javascripts/buildRandomMap.js"  type="text/javascript"></script>
+<script src="/javascripts/Functions.js"          type="text/javascript"></script>
+<script src="/javascripts/buildServerOptions.js" type="text/javascript"></script>
+<script src="/javascripts/buildGameStyle.js"     type="text/javascript"></script>
+<script src="/javascripts/buildFlagList.js"      type="text/javascript"></script>
+<script src="/javascripts/buildGenFlagOpt.js"    type="text/javascript"></script>
+<script src="/javascripts/buildRandomMap.js"     type="text/javascript"></script>
 
 {% endblock %}
