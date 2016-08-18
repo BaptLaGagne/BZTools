@@ -7,18 +7,22 @@
     <link href="/stylesheets/perso.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+ {% if redirecting %}
+  <div id="redirecting">
+   {{ RedirMessage }}
+  </div>
+ {% endif %}
 <div class="container">
     <header class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">BZFlag Helper</a>
+                <a class="navbar-brand" href="/api">BZFlag Helper</a>
             </div>
             <div class="collapse navbar-collapse">
                 {% include './include/nav.html' %}
             </div>
         </div>
     </header>
-
     {% block content %}{% endblock %}
 </div>
 </body>
