@@ -71,7 +71,7 @@ function ShowSlideValue(newValue,ElementID){
 
 /********************** Function to add two input to select shot limit per flag  ********************/
 var counter = 1;
-function addFlagLimit(){
+function addFlagLimit(DefaultValue){
 
     var Parent   = "ShotPerFlag";
     var SelectID = "SelectShotFlag"+counter;
@@ -115,6 +115,10 @@ function addFlagLimit(){
          { 
             var SelectEntry = document.createElement("option");
             SelectEntry.setAttribute("value", "-sl " + JsonData.flags.goodflags[i].abrv);
+
+            if("-sl " + JsonData.flags.goodflags[i].abrv == DefaultValue )
+             SelectEntry.setAttribute("selected", "selected");
+
 
             var Label = document.createTextNode(JsonData.flags.goodflags[i].Name);
             SelectEntry.appendChild(Label);

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=* node ./bin/www"
+    "start": "DEBUG=demo_express:server node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
