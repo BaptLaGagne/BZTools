@@ -19,7 +19,6 @@ router.use(function(req, res, next) {
 //  GET home page
 /*********************************/
 router.get('/', function(req, res, next) {
-
   res.render('index', { title: 'BZFlag helper' });
 });
 
@@ -28,7 +27,6 @@ router.get('/', function(req, res, next) {
 /*********************************/
 
 router.get('/BZConfig', function(req, res) {
-
 //Redirect to kill server page if a server is already running
   exec( "ps cax | grep bzfs" , (error, stdout, stderr) => {  
         if(stdout){
@@ -36,7 +34,7 @@ router.get('/BZConfig', function(req, res) {
             res.redirect('/api/KillBZServer?RedirMessage=Configuration+not+allowed+:+serveur+is+already+running');
             return;
         }
-        RenderWithMessage(res,'BZconfig',req.query.RedirMessage );
+        RenderWithMessage(res,'../views/BZConfig.html',req.query.RedirMessage );
      });
 
 });
@@ -68,10 +66,10 @@ router.get('/KillBZServer', function(req, res, next) {
             debug(`serveur is running`);
             var Message = req.query.RedirMessage;
             if(Message){ //if its a redirection show a warnin
-             res.render('KillBZServer', {redirecting : true, RedirMessage: Message, ServerParameters:  JSON.stringify(Form,undefined,2) });
+             res.render('../views/KillBZServer.html', {redirecting : true, RedirMessage: Message, ServerParameters:  JSON.stringify(Form,undefined,2) });
             }
             else{ //if not render without warning
-              res.render('KillBZServer', {redirecting : false, ServerParameters:  JSON.stringify(Form,undefined,2) });
+              res.render('../views/KillBZServer.html', {redirecting : false, ServerParameters:  JSON.stringify(Form,undefined,2) });
             }
             return;
         }

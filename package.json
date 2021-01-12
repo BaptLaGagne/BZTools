@@ -6,12 +6,12 @@
     "start": "DEBUG=demo_express:server node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.15.1",
-    "consolidate": "^0.14.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express": "~4.13.4",
-    "serve-favicon": "~2.3.0",
-    "swig": "1.x"
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.16.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.2.0",
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0",
+    "swig": "^1.4.2"
   }
 }
