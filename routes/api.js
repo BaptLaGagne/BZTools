@@ -47,8 +47,9 @@ router.post('/BZConfig', function(req, res) {
     var ConfFileName = "bz.cfg";
     Form = req.body;
     WriteConfigFile(Form,ConfFileName,function(){
-    var CMD_Run_Server = "" + Form.BZPath + " -conf " + ConfFileName;
-    ExecThisCommand(CMD_Run_Server);
+      var CMD_Run_Server = "" + Form.BZPath + " -conf " + ConfFileName;
+      console.log(      CMD_Run_Server )
+      ExecThisCommand(CMD_Run_Server);
     });
 
    res.redirect('/api/KillBZServer?RedirMessage=Server+lanch+...+redirecting');
@@ -144,6 +145,30 @@ function ExecThisCommand(CMD){
      });
 }
 
+function createMapList() {
+
+  const mapPath = "public/data/maps/";
+  fs.readdir( mapPath , (err, files) => {
+      if (err) {
+          throw err;
+      }
+  
+      // files object contains all files names
+      // log them on console
+      var maps = {maps: []}
+      files.forEach(file => {
+        if( file.endsWith(".bzw"))
+          maps.maps.push( __dirname + "/../" + mapPath + file);
+      });
+      fs.writeFile(mapPath + "maps.json", JSON.stringify( maps ),  function(err) {
+        if (err){
+           return console.error(err);
+        }
+      });
+
+  });
+
+}
 
 // Write config file for bzfs
 function WriteConfigFile(form,filename,callback){
@@ -179,7 +204,12 @@ function WriteConfigFile(form,filename,callback){
         CONFIG += "### Bullets can ricochets: ###\n";
         CONFIG += form.BulletRicochet + "\n";
       }
-      if(form.GameType != "-cr"){
+
+      if (form.MapSelect != "" && form.GameType != "-cr" ) {
+        CONFIG += "### SELECTED MAP ###\n";
+        CONFIG += form.MapSelect + "\n";
+      }
+      else if(form.GameType != "-cr"){
         CONFIG += "### RANDOM MAP SETTINGS ###\n";
         CONFIG += "### Map Size ###\n";
         CONFIG += "-worldsize " + form.WorldSize + "\n";
@@ -235,3 +265,6 @@ function WriteConfigFile(form,filename,callback){
 
   });
 }
+
+
+createMapList()

@@ -35,8 +35,6 @@ function populateForm($form, data){
             $('option', $ctrl).each(function() {
                 if (this.value == value)
                     this.selected = true;
-                        console.log("I'm a selects");
-
             });
         } else if ($ctrl.is('textarea')) {
             $ctrl.val(value);

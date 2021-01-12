@@ -153,12 +153,9 @@ function PrepareDataAndSubmit(frm){
     var NbrOfGoodFlags =  JsonData.flags.goodflags.length;
     var NbrOfBadFlags  = JsonData.flags.badflags.length;
 
-    console.log(NbrOfBadFlags);
-
     for( var i = 0 ; i < NbrOfGoodFlags ; i++ )
     {
          var Flag_i = document.getElementById(JsonData.flags.goodflags[i].abrv);
-         console.log(Flag_i.checked);
 
          if(Flag_i.checked)
          {
@@ -166,7 +163,6 @@ function PrepareDataAndSubmit(frm){
          }
          else
          {  //set the checkbox to checked in order to send the value to the server
-            console.log("flag unchek :"+JsonData.flags.goodflags[i].abrv)
             Flag_i.checked = true;
             Flag_i.value = "-" + Flag_i.value;
          }
