@@ -1,9 +1,9 @@
 {
-  "BZPath": "/Applications/BZFlag-2.0.16.app/Contents/MacOS/bzfs",
+  "BZPath": "/usr/local/bin/bzfs",
   "Port": "5154",
-  "GameDuration": "781",
-  "GameType": "-rabbit score",
-  "ShotBeforReload": "6",
+  "GameDuration": "900",
+  "GameType": "-offa",
+  "ShotBeforReload": "5",
   "IsJumpAllow": "-j",
   "SpawnOnBuilding": "-sb",
   "BulletRicochet": "+r",
@@ -14,7 +14,7 @@
   "WithTP": "-t",
   "listofgoodflags": [
     "+f A",
-    "-f CL",
+    "+f CL",
     "+f F",
     "-f G",
     "+f GM",
@@ -39,7 +39,7 @@
   ],
   "listofbadflags": [
     "-f B",
-    "+f BY",
+    "-f BY",
     "-f CB",
     "-f FO",
     "-f JM",
@@ -56,11 +56,9 @@
   "BadDrop": "10",
   "FlagOnBuilding": "-fb",
   "LimitedFlag": [
-    "-sl WG",
-    "-sl F"
+    "-sl L"
   ],
   "ShotLimitPerFlag": [
-    "6",
     "3"
   ]
 }
