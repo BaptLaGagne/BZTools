@@ -8,8 +8,8 @@
   "SpawnOnBuilding": "-sb",
   "BulletRicochet": "+r",
   "Input_FFKY": "-tk",
-  "WorldSize": "251",
-  "BuildingDensity": "6",
+  "WorldSize": "151",
+  "BuildingDensity": "5",
   "WithRandBuildingH": "-h",
   "WithTP": "-t",
   "listofgoodflags": [

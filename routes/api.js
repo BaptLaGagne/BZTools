@@ -170,10 +170,57 @@ function createMapList() {
 
 }
 
+function keepFlagDensityConstant(goodFlag, badFlag, mapSize) {
+
+  function wanted(flagList) {
+    var flags = [];
+    for ( let i = 0; i < flagList.length; i++) {
+      if(flagList[ i ].includes('+f'))
+        flags.push( flagList[ i ] );
+    }
+    return flags;
+  } 
+
+  var wantedGood = wanted(goodFlag);
+  var wantedBad = wanted(badFlag);
+
+  const minTargetDensity = 0.12;
+  const goodFlagSize = wantedGood.length;
+  const badFlagSize = wantedBad.length;
+  const mapLength = parseInt( mapSize, 10);
+  const actualDensity = (goodFlagSize + badFlagSize) / mapLength;
+
+  if( actualDensity < minTargetDensity && goodFlagSize > 0 ) {
+
+    var getRandomInt = function (max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+    const flagToAdd = Math.ceil( minTargetDensity * mapLength ) - (goodFlagSize + badFlagSize);
+
+    const badFlagProba =   badFlagSize / goodFlagSize ;
+
+    for (let i = 0; i < flagToAdd; i ++ ) {
+
+      var isBad = Math.random() < badFlagProba;
+      if ( isBad ) {
+        badFlag.push( wantedBad[ getRandomInt( badFlagSize-1 ) ]);
+
+      } else {
+        let toto = wantedGood[ getRandomInt( goodFlagSize-1 ) ];
+        goodFlag.push( toto );
+      }
+
+    }
+
+  }
+
+}
+
 // Write config file for bzfs
 function WriteConfigFile(form,filename,callback){
  var date = new Date(); 
  var timestamp= date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear() + "  " + date.getHours() + ":" + date.getMinutes();
+ keepFlagDensityConstant(form.listofgoodflags, form.listofbadflags, form.WorldSize );
 
  var PosOf2_0_16 = ("" + form.BZPath).search("2.0.16");
 
