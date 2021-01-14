@@ -14,7 +14,7 @@ box
 end
 box
  position 0 0 16
- size 14 14 9
+ size 20 20 12
 end
 pyramid
  position 0 0 13
