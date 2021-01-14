@@ -1,0 +1,251 @@
+
+###### WORLD
+world  
+ name BaptLaGagne
+ size 200.0
+end
+
+###### MATERIALS
+material
+ name text1
+ texture text1
+ addtexture text1
+ notextures
+ notexcolor
+ notexalpha
+ texmat -1
+ dyncol -1
+ ambient 0.0 0.0 0.0 1.0
+ diffuse 1.0 1.0 1.0 1.0
+ color 1.0 1.0 1.0 1.0
+ specular 0.0 0.0 0.0 1.0
+ emission 0.0 0.0 0.0 1.0
+ shininess 0.0
+ resetmat
+ spheremap 
+ noradar 
+ noshadow
+ noculling 
+ nosorting 
+ nolighting 
+ alphathresh 0.0 
+ groupalpha
+ occluder 
+end
+
+material
+ name text2
+ texture text2
+ addtexture text2
+ notextures
+ notexcolor
+ notexalpha
+ texmat -1
+ dyncol -1
+ ambient 0.0 0.0 0.0 1.0
+ diffuse 1.0 1.0 1.0 1.0
+ color 1.0 1.0 1.0 1.0
+ specular 0.0 0.0 0.0 1.0
+ emission 0.0 0.0 0.0 1.0
+ shininess 0.0
+ resetmat
+ spheremap 
+ noradar 
+ noshadow
+ noculling 
+ nosorting 
+ nolighting 
+ alphathresh 0.0 
+ groupalpha
+ occluder 
+end
+
+material
+ name text3
+ texture text3
+ addtexture text3
+ notextures
+ notexcolor
+ notexalpha
+ texmat -1
+ dyncol -1
+ ambient 0.0 0.0 0.0 1.0
+ diffuse 1.0 1.0 1.0 1.0
+ color 1.0 1.0 1.0 1.0
+ specular 0.0 0.0 0.0 1.0
+ emission 0.0 0.0 0.0 1.0
+ shininess 0.0
+ resetmat
+ spheremap 
+ noradar 
+ noshadow
+ noculling 
+ nosorting 
+ nolighting 
+ alphathresh 0.0 
+ groupalpha
+ occluder 
+end
+
+material
+ name text4
+ texture text4
+ #addtexture text4
+ notextures
+ notexcolor
+ notexalpha
+ texmat -1
+ dyncol -1
+ ambient 0.0 0.0 0.0 1.0
+ diffuse 1.0 1.0 1.0 1.0
+ color 1.0 1.0 1.0 1.0
+ specular 0.0 0.0 0.0 1.0
+ emission 0.0 0.0 0.0 1.0
+ shininess 0.0
+ resetmat
+ spheremap 
+ noradar 
+ noshadow
+ noculling 
+ nosorting 
+ nolighting 
+ alphathresh 0.0 
+ groupalpha
+ occluder 
+end
+
+###### OBJECTS
+
+#CENTER
+box
+ position 0 0 0
+ size 20 20 10
+ x+ matref text1
+ x- matref text2
+ y+ matref text3
+ y- matref text4
+end
+box
+ position 0 0 12.5
+ size 10 10 15
+end
+pyramid
+ position 0 0 10
+ rotation 45
+ size 2.5 2.5 5
+end
+
+teleporter 
+  name center_tp
+  position 8 8 10 
+  size 0.125 5 10
+  rotation 45
+  border 1.12
+end 
+
+#CORNERS
+box
+ position -95 95 0
+ size 5 5 10
+end
+teleporter 
+  name top_left_tp
+  position -95 95 10 
+  size 0.125 5 10
+  rotation 45
+  border 1.12
+end 
+box
+ position 95 95 0
+ size 5 5 10
+end
+teleporter 
+  name top_right_tp
+  position 95 95 0
+  size 0.125 5 10
+  rotation 135
+  border 1.12
+end 
+box
+ position 95 -95 0
+ size 5 5 10
+end
+teleporter 
+  name bottom_right_tp
+  position 95 -95 10 
+  size 0.125 5 10
+  rotation -45
+  border 1.12
+end 
+box
+ position -95 -95 0
+ size 5 5 10
+end
+teleporter 
+  name bottom_left_tp
+  position -95 -95 10 
+  size 0.125 5 10
+  rotation -135
+  border 1.12
+end 
+
+
+##### IN THE GROUND
+
+teleporter 
+  name gnd_tp_1
+  position 0 50 10 
+  size 0.125 5 10
+  rotation 0
+  border 1.12
+end 
+
+teleporter 
+  name gnd_tp_2
+  position 0 -50 10 
+  size 0.125 5 10
+  rotation 0
+  border 1.12
+end 
+
+#LINKS
+
+link 
+from center_tp:b
+to gnd_tp_1:b
+end
+
+link 
+from center_tp:f
+to gnd_tp_2:b
+end
+
+link 
+from gnd_tp_1:f
+to gnd_tp_2:f
+end
+
+link 
+from gnd_tp_2:f
+to gnd_tp_1:f
+end
+
+link 
+from top_left_tp
+to center_tp:f
+end
+
+link 
+from top_right_tp
+to center_tp:f
+end
+
+link 
+from bottom_left_tp
+to center_tp:f
+end
+
+link 
+from bottom_right_tp
+to center_tp:f
+end
