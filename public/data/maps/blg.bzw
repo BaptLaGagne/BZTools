@@ -21,10 +21,15 @@ pyramid
  rotation 45
  size 6 6 10
 end
+pyramid
+ position 0 0 28
+ rotation 0
+ size 6 6 10
+end
 
 teleporter 
   name center_tp
-  position 0 25 10 
+  position -25 0 10 
   size 0.125 5 22
   rotation 0
   border 1.12
@@ -39,7 +44,7 @@ teleporter
   name top_left_tp
   position -135 135 10 
   size 0.125 5 20
-  rotation 45
+  rotation 135
   border 1.12
 end 
 box
@@ -50,7 +55,7 @@ teleporter
   name top_right_tp
   position 135 135 10
   size 0.125 5 20
-  rotation 135
+  rotation 45
   border 1.12
 end 
 box
