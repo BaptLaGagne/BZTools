@@ -5,93 +5,19 @@ world
  size 150
 end
 
-###### MATERIALS
-material
- name text1
- texture https://cdn.blinkl.com/video_360/poc_cemoi/next.png
- notexalpha
- texmat -1
- dyncol -1
- ambient 0.0 0.0 0.0 1.0
- diffuse 1.0 1.0 1.0 1.0
- color 1.0 1.0 1.0 1.0
- specular 0.0 0.0 0.0 1.0
- emission 0.0 0.0 0.0 1.0
- shininess 0.0  
- noculling 
- nosorting  
- occluder 
-end
-
-material
- name text2
- texture text2
- notexalpha
- texmat -1
- dyncol -1
- ambient 0.0 0.0 0.0 1.0
- diffuse 1.0 1.0 1.0 1.0
- color 1.0 1.0 1.0 1.0
- specular 0.0 0.0 0.0 1.0
- emission 0.0 0.0 0.0 1.0
- shininess 0.0  
- noculling 
- nosorting  
- occluder 
-end
-
-material
- name text3
- texture text3
- notexalpha
- texmat -1
- dyncol -1
- ambient 0.0 0.0 0.0 1.0
- diffuse 1.0 1.0 1.0 1.0
- color 1.0 1.0 1.0 1.0
- specular 0.0 0.0 0.0 1.0
- emission 0.0 0.0 0.0 1.0
- shininess 0.0  
- noculling 
- nosorting  
- occluder 
-end
-
-material
- name text4
- texture text4
-
- notexalpha
- texmat -1
- dyncol -1
- ambient 0.0 0.0 0.0 1.0
- diffuse 1.0 1.0 1.0 1.0
- color 1.0 1.0 1.0 1.0
- specular 0.0 0.0 0.0 1.0
- emission 0.0 0.0 0.0 1.0
- shininess 0.0  
- noculling 
- nosorting  
- occluder 
-end
-
 ###### OBJECTS
 
 #CENTER
 box
  position 0 0 0
  size 50 50 13
- x+ matref text1
- x- matref text2
- y+ matref text3
- y- matref text4
 end
 box
- position 0 0 17.5
- size 14 14 15
+ position 0 0 16
+ size 14 14 9
 end
 pyramid
- position 0 0 15
+ position 0 0 13
  rotation 45
  size 6 6 10
 end
@@ -100,7 +26,7 @@ teleporter
   name center_tp
   position 20 20 10 
   size 0.125 5 20
-  rotation 45
+  rotation -45
   border 1.12
 end 
 
