@@ -13,8 +13,8 @@ box
  size 50 50 13
 end
 box
- position 0 0 16
- size 20 20 12
+ position 0 0 18
+ size 18 18 10
 end
 pyramid
  position 0 0 13
@@ -24,9 +24,9 @@ end
 
 teleporter 
   name center_tp
-  position 20 20 10 
-  size 0.125 5 20
-  rotation -45
+  position 0 25 10 
+  size 0.125 5 22
+  rotation 0
   border 1.12
 end 
 
