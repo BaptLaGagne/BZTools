@@ -8,7 +8,7 @@ end
 ###### MATERIALS
 material
  name text1
- texture text1
+ texture https://cdn.blinkl.com/video_360/poc_cemoi/next.png
  notexalpha
  texmat -1
  dyncol -1
@@ -80,7 +80,7 @@ end
 #CENTER
 box
  position 0 0 0
- size 40 40 15
+ size 50 50 13
  x+ matref text1
  x- matref text2
  y+ matref text3
@@ -88,17 +88,17 @@ box
 end
 box
  position 0 0 17.5
- size 20 20 20
+ size 14 14 15
 end
 pyramid
  position 0 0 15
  rotation 45
- size 4 4 10
+ size 6 6 10
 end
 
 teleporter 
   name center_tp
-  position 15 15 10 
+  position 20 20 10 
   size 0.125 5 20
   rotation 45
   border 1.12
@@ -155,7 +155,7 @@ end
 
 teleporter 
   name gnd_tp_1
-  position 0 75 10 
+  position 0 75 0 
   size 0.125 5 20
   rotation 0
   border 1.12
@@ -163,7 +163,7 @@ end
 
 teleporter 
   name gnd_tp_2
-  position 0 -75 10 
+  position 0 -75 0 
   size 0.125 5 20
   rotation 0
   border 1.12
@@ -191,22 +191,43 @@ from gnd_tp_2:f
 to gnd_tp_1:f
 end
 
+
 link 
-from top_left_tp
+from top_left_tp:f
 to center_tp:f
 end
 
 link 
-from top_right_tp
+from top_right_tp:f
 to center_tp:f
 end
 
 link 
-from bottom_left_tp
+from bottom_left_tp:f
 to center_tp:f
 end
 
 link 
-from bottom_right_tp
+from bottom_right_tp:f
 to center_tp:f
+end
+
+link 
+from top_left_tp:b
+to bottom_right_tp:b
+end
+
+link 
+from bottom_right_tp:b
+to top_left_tp:b
+end
+
+link 
+from top_right_tp:b
+to bottom_left_tp:b
+end
+
+link 
+from bottom_left_tp:b
+to top_right_tp:b
 end
