@@ -1,5 +1,5 @@
 {
-  "BZPath": "/usr/local/bin/bzfs",
+  "BZPath": "/usr/games/bzfs",
   "Port": "5154",
   "GameDuration": "900",
   "GameType": "-offa",
