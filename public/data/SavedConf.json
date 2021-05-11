@@ -15,6 +15,7 @@
   "listofgoodflags": [
     "+f A",
     "+f CL",
+    "+f BU",
     "+f F",
     "-f G",
     "+f GM",

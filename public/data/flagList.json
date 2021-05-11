@@ -1,6 +1,7 @@
 { "flags": {
               "goodflags": [
                   {"abrv":"A",  "Name":"Agility"},
+                  {"abrv":"BU", "Name":"BUrrow "},
                   {"abrv":"CL", "Name":"Cloaking "},
                   {"abrv":"F",  "Name":"rapid Fire"},
                   {"abrv":"G",  "Name":"Genocide"},
