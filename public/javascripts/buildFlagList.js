@@ -11,20 +11,22 @@
             const parentObj = document.getElementById(parent);
             const childs = parentObj.children;
             console.log(childs)
+            console.log(childs.length)
+
             if ( childs ) {
 
-              for (var c = 0; c < childs.length; c++ ) {
+              // for (var c = 0; c < childs.length; c++ ) {
                 
-                if ( childs[c ].tagName == "INPUT" ) {
-                  if ( USERWANTTOSELECT[type] ) 
-                    childs[c].setAttribute('checked', true)
-                  else {
-                    childs[c].setAttribute('checked', true)
+              //   if ( childs[ c ].tagName == "INPUT" ) {
+              //     if ( USERWANTTOSELECT[type] ) 
+              //       childs[c].setAttribute('checked', true)
+              //     else {
+              //       childs[c].setAttribute('checked', true)
         
-                  }
-                }
+              //     }
+              //   }
       
-              }
+              // }
       
               USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
             }
