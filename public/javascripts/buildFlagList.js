@@ -12,19 +12,19 @@
             const childs = parentObj.children;
             if ( childs ) {
 
-              for (var c = 0; c < childs.length; c++ ) {
+              // for (var c = 0; c < childs.length; c++ ) {
                 
-                if ( childs[ c ].tagName == "INPUT" ) {
-                  console.log(childs[ c ])
-                  if ( USERWANTTOSELECT[type] ) 
-                    childs[c].setAttribute('checked', true)
-                  else {
-                    childs[c].setAttribute('checked', true)
+              //   if ( childs[ c ].tagName == "INPUT" ) {
+              //     console.log(childs[ c ])
+              //     if ( USERWANTTOSELECT[type] ) 
+              //       childs[c].setAttribute('checked', true)
+              //     else {
+              //       childs[c].setAttribute('checked', true)
         
-                  }
-                }
+              //     }
+              //   }
       
-              }
+              // }
       
               USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
             }
