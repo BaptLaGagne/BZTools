@@ -48,7 +48,7 @@ router.post('/BZConfig', function(req, res) {
     Form = req.body;
     WriteConfigFile(Form,ConfFileName,function(){
       var CMD_Run_Server = "" + Form.BZPath + " -conf " + ConfFileName;
-      console.log(      CMD_Run_Server )
+      console.log( CMD_Run_Server )
       ExecThisCommand(CMD_Run_Server);
     });
 
@@ -170,6 +170,32 @@ function createMapList() {
 
 }
 
+function createPluginList() {
+
+  //TODO: set an env variable
+  const pluginPath = "/usr/games/bzflag/lib/bzflag/";
+  fs.readdir( pluginPath , (err, files) => {
+      if (err) {
+          throw err;
+      }
+  
+      // files object contains all files names
+      // log them on console
+      var plugins = {plugins: []}
+      files.forEach(file => {
+        if( file.endsWith(".so"))
+          plugins.plugins.push( {name: file.replace(/\.[^/.]+$/, ""), path: __dirname + "/../" + pluginPath + file});
+      });
+      fs.writeFile( "public/data/plugins.json", JSON.stringify( plugins ),  function(err) {
+        if (err){
+           return console.error(err);
+        }
+      });
+
+  });
+
+}
+
 function keepFlagDensityConstant(goodFlag, badFlag, mapSize) {
 
   function wanted(flagList) {
@@ -229,6 +255,7 @@ function WriteConfigFile(form,filename,callback){
     CONFIG += "### Runnig server @: " + form.BZPath + " ###\n";
     CONFIG += "### Server Options: ###\n";
     CONFIG += "-p " + form.Port + "\n";
+    CONFIG += "-passwd bzpass\n";
     CONFIG += "### MAIN OPTIONS: ###\n";
     CONFIG += "### Game Type : ###\n";
       if(PosOf2_0_16 == -1){ //option -offa not allowed in BzFlag version 2.0.16 (offa is then default)
@@ -238,6 +265,14 @@ function WriteConfigFile(form,filename,callback){
     CONFIG +=  "-time " + form.GameDuration + "\n";
     CONFIG += "### Number of shots before reload: (dafault :5) ###\n";
     CONFIG += "-ms " + form.ShotBeforReload + "\n";
+
+    if(form.PluginsPath!=undefined){
+      CONFIG += "### PLUGINS ###\n";
+        for( var i=0 ; i<form.PluginsPath.length;i++){
+
+        CONFIG += form.PluginsPath[i] + " " + form.PluginsConf[i]+"\n";
+        }
+  }
 
       if( "" + form.IsJumpAllow != "undefined"){ //option -offa not allowed in BzFlag version 2.0.16 (offa is then default)
          CONFIG += "### This option allows jumping : ###\n";
@@ -314,4 +349,5 @@ function WriteConfigFile(form,filename,callback){
 }
 
 
-createMapList()
+createMapList();
+createPluginList();

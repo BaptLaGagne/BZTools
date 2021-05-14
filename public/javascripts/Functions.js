@@ -82,6 +82,9 @@ function addFlagLimit(DefaultValue){
     var NewDiv         = document.createElement("DIV");
     var NewSelect      = document.createElement("SELECT");
     var NewNumberInput = document.createElement("INPUT");
+    var DeleteEntry = document.createElement("BUTTON");
+    DeleteEntry.innerHTML = "X";
+
     var lab1 = document.createElement("LABEL");
     var lab2 = document.createElement("LABEL");
     var title1 = document.createTextNode("Flag");
@@ -127,6 +130,10 @@ function addFlagLimit(DefaultValue){
          }   
     }); 
 
+    DeleteEntry.onclick = () => {
+        document.getElementById(Parent).removeChild(NewDiv);
+    }
+
 /** FILL DOM TREE **/
     lab1.appendChild(title1);      
     lab2.appendChild(title2);
@@ -134,9 +141,81 @@ function addFlagLimit(DefaultValue){
     NewDiv.appendChild(NewSelect);
     NewDiv.appendChild(lab2);
     NewDiv.appendChild(NewNumberInput);
+    NewDiv.appendChild(DeleteEntry);
     document.getElementById(Parent).appendChild(NewDiv);
 
     counter++;
+}; 
+
+/********************** Function to add two input to select shot limit per flag  ********************/
+var counter_plugin = 1;
+function addPlugin(){
+
+    var Parent   = "Plugins";
+    var SelectID = "SelectPlugin"+counter_plugin;
+    var NewDivID = "ContainerPlugin"+counter_plugin;
+    var NewConfID = "PluginConf"+counter_plugin;
+
+/** CREATES ELEMENTS **/
+    var NewDiv         = document.createElement("DIV");
+    var NewSelect      = document.createElement("SELECT");
+    var NewTextInput = document.createElement("INPUT");
+    var DeleteEntry = document.createElement("BUTTON");
+    DeleteEntry.innerHTML = "X";
+
+    var lab1 = document.createElement("LABEL");
+    var lab2 = document.createElement("LABEL");
+    var title1 = document.createTextNode("Plugin");
+    var title2 = document.createTextNode("Conf");
+
+/** ATTRIBUTES **/
+    NewDiv.setAttribute("id", NewDivID);
+    NewSelect.setAttribute("id", SelectID);
+    NewSelect.setAttribute("name", "PluginsPath[]");
+
+    NewTextInput.setAttribute("type" , "text");
+    NewTextInput.setAttribute("size" , 60);
+    NewTextInput.setAttribute("id", NewConfID);
+    NewTextInput.setAttribute("value", "");
+    NewTextInput.setAttribute("name" , "PluginsConf[]");
+
+    lab1.setAttribute("for",SelectID)
+    lab2.setAttribute("for",NewConfID)
+
+    //Create elements option and attribute for SELECT by reading the List of BZFlag plugins
+    loadJSON( "../data/plugins.json", function(response) 
+    {
+        const plugins = JSON.parse( response ).plugins;
+
+        var NbrOfPlugins = plugins.length;
+
+         for( var i = 0 ; i < NbrOfPlugins ; i++ )
+         { 
+            var SelectEntry = document.createElement("option");
+            SelectEntry.setAttribute("value", "-loadplugin " + plugins[i].path);
+
+            var Label = document.createTextNode( plugins[i].name );
+            SelectEntry.appendChild(Label);
+
+            NewSelect.appendChild(SelectEntry);
+         }   
+    }); 
+
+    DeleteEntry.onclick = () => {
+        document.getElementById(Parent).removeChild(NewDiv);
+    }
+
+/** FILL DOM TREE **/
+    lab1.appendChild(title1);      
+    lab2.appendChild(title2);
+    NewDiv.appendChild(lab1);
+    NewDiv.appendChild(NewSelect);
+    NewDiv.appendChild(lab2);
+    NewDiv.appendChild(NewTextInput);
+    NewDiv.appendChild(DeleteEntry);
+    document.getElementById(Parent).appendChild(NewDiv);
+
+    counter_plugin++;
 }; 
 
 /********************** Save form in local storage when form change ********************/
