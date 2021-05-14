@@ -19,12 +19,12 @@
                 
                 if ( childs[ c ].tagName == "INPUT" ) {
                   console.log(childs[ c ])
-                  // if ( USERWANTTOSELECT[type] ) 
-                  //   childs[c].setAttribute('checked', true)
-                  // else {
-                  //   childs[c].setAttribute('checked', true)
+                  if ( USERWANTTOSELECT[type] ) 
+                    childs[c].setAttribute('checked', true)
+                  else {
+                    childs[c].setAttribute('checked', true)
         
-                  // }
+                  }
                 }
       
               }
@@ -94,5 +94,5 @@
         document.getElementById(ParentBad).appendChild(NewLabel);
       }
 
-      addSelectAllButton(ParentBad, "bad");
+      //addSelectAllButton(ParentBad, "bad");
      });
