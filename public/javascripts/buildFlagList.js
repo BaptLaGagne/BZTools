@@ -2,11 +2,16 @@
        var USERWANTTOSELECT = { good: true, bad: false}
        var addSelectAllButton = function (parent, type) {
 
-          var select = document.createElement("BUTTON");
-          select.innerHTML = "(un)select all";
+        var NewLabel = document.createElement("LABEL");
+        NewLabel.setAttribute("id", "select" + type )
+        var NewInput = document.createElement("INPUT");
+        var Text     = document.createTextNode(  "(un)select all" );
 
-        
-          select.onclick = () => {
+        NewLabel.setAttribute("for"    , "select" + type  );
+        NewLabel.setAttribute("class"    , "GreenRedButton");
+        NewLabel.appendChild(Text);
+
+        NewInput.onclick = () => {
             
             const parentObj = document.getElementById(parent);
             const childs = parentObj.children;
@@ -31,8 +36,9 @@
     
           }
     
-          document.getElementById(parent).appendChild(select);
-  
+          document.getElementById(parent).appendChild(NewInput);
+          document.getElementById(ParentGood).appendChild(NewLabel);
+
        }
   
   
