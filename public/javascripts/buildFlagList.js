@@ -66,16 +66,18 @@
  
       select.onclick = () => {
  
-         const childs = document.getElementById(parent).children();
+         const childs = document.getElementById(parent).children;
  
          for (var c = 0; c < childs.length; c++ ) {
- 
-           if ( USERWANTTOSELECT[type] ) 
-             childs[c].setAttribute('checked', true)
-           else {
-             childs[c].setAttribute('checked', true)
- 
-           }
+          
+          if ( childs[c ].tagName == "INPUT" ) {
+            if ( USERWANTTOSELECT[type] ) 
+              childs[c].setAttribute('checked', true)
+            else {
+              childs[c].setAttribute('checked', true)
+  
+            }
+          }
  
          }
  
