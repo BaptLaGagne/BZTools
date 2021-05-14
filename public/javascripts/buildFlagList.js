@@ -10,9 +10,6 @@
             
             const parentObj = document.getElementById(parent);
             const childs = parentObj.children;
-            console.log(childs)
-            console.log(childs.length)
-
             if ( childs ) {
 
               for (var c = 0; c < childs.length; c++ ) {
@@ -94,5 +91,5 @@
         document.getElementById(ParentBad).appendChild(NewLabel);
       }
 
-      //addSelectAllButton(ParentBad, "bad");
+      addSelectAllButton(ParentBad, "bad");
      });
