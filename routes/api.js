@@ -270,7 +270,15 @@ function WriteConfigFile(form,filename,callback){
       CONFIG += "### PLUGINS ###\n";
         for( var i=0 ; i<form.PluginsPath.length;i++){
 
-        CONFIG += form.PluginsPath[i] + " " + form.PluginsConf[i]+"\n";
+          CONFIG += form.PluginsPath[i];
+          if ( form.PluginsConf[i]!= "" ) {
+
+            if (form.PluginsConf[i][0] != ",")
+              CONFIG += ",";
+
+              CONFIG += form.PluginsConf[i]
+          } 
+          CONFIG += "\n";
         }
   }
 
