@@ -228,7 +228,6 @@ function selectAll(parent, type) {
       for (var c = 0; c < childs.length; c++ ) {
         
         if ( childs[ c ].tagName == "INPUT" ) {
-          console.log(childs[ c ])
           if ( USERWANTTOSELECT[type] ) 
             childs[c].setAttribute('checked', 'checked')
           else {
@@ -239,7 +238,7 @@ function selectAll(parent, type) {
 
       }
 
-      USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
+      USERWANTTOSELECT[type] = !USERWANTTOSELECT[type]
     }
 
  }
