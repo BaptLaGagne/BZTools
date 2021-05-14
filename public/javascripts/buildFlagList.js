@@ -6,7 +6,8 @@
           select.innerHTML = "(un)select all";
     
           select.onclick = () => {
-    
+            
+            console.log( document.getElementById(parent) )
             const childs = document.getElementById(parent).children;
     
             for (var c = 0; c < childs.length; c++ ) {
