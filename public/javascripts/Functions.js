@@ -230,9 +230,9 @@ function selectAll(parent, type) {
         if ( childs[ c ].tagName == "INPUT" ) {
           console.log(childs[ c ])
           if ( USERWANTTOSELECT[type] ) 
-            childs[c].setAttribute('checked', true)
+            childs[c].setAttribute('checked', 'checked')
           else {
-            childs[c].setAttribute('checked', true)
+            childs[c].removeAttribute('checked')
 
           }
         }
