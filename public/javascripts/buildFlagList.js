@@ -57,3 +57,36 @@
 
 
 
+     var USERWANTTOSELECT = { good: true, bad: false}
+
+     var addSelectAllButton = (parent, type) => {
+
+      var select = document.createElement("BUTTON");
+      select.innerHTML = "(un)select all";
+ 
+      select.onclick = () => {
+ 
+         const childs = document.getElementById(parent).children();
+ 
+         for (var c = 0; c < childs.length; c++ ) {
+ 
+           if ( USERWANTTOSELECT[type] ) 
+             childs[c].setAttribute('checked', true)
+           else {
+             childs[c].setAttribute('checked', true)
+ 
+           }
+ 
+         }
+ 
+         USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
+ 
+      }
+ 
+      document.getElementById(parent).appendChild(select);
+
+     }
+
+
+     addSelectAllButton(ParentGood, "good");
+     addSelectAllButton(ParentBad, "bad");
