@@ -230,10 +230,9 @@ function selectAll(parent, type) {
         if ( childs[ c ].tagName == "INPUT" ) {
           if ( USERWANTTOSELECT[type] ) 
             childs[c].checked = true;
-          else {
-            childs[c].removeAttribute("checked");
+          else 
+            childs[c].checked = false;
 
-          }
         }
 
       }
