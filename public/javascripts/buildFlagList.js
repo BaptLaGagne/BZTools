@@ -31,7 +31,7 @@
     
           }
     
-          document.getElementById(parent).parentNode.appendChild(select);
+          document.getElementById(parent).appendChild(select);
   
        }
   
