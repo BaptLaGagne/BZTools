@@ -184,7 +184,7 @@ function createPluginList() {
       var plugins = {plugins: []}
       files.forEach(file => {
         if( file.endsWith(".so"))
-          plugins.plugins.push( {name: file.replace(/\.[^/.]+$/, ""), path: __dirname + "/../" + pluginPath + file});
+          plugins.plugins.push( {name: file.replace(/\.[^/.]+$/, ""), path:  pluginPath + file});
       });
       fs.writeFile( "public/data/plugins.json", JSON.stringify( plugins ),  function(err) {
         if (err){
