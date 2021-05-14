@@ -18,12 +18,13 @@
               for (var c = 0; c < childs.length; c++ ) {
                 
                 if ( childs[ c ].tagName == "INPUT" ) {
-                  if ( USERWANTTOSELECT[type] ) 
-                    childs[c].setAttribute('checked', true)
-                  else {
-                    childs[c].setAttribute('checked', true)
+                  console.log(childs[ c ])
+                  // if ( USERWANTTOSELECT[type] ) 
+                  //   childs[c].setAttribute('checked', true)
+                  // else {
+                  //   childs[c].setAttribute('checked', true)
         
-                  }
+                  // }
                 }
       
               }
@@ -71,7 +72,7 @@
         document.getElementById(ParentGood).appendChild(NewLabel);
 
       }
-      //addSelectAllButton(ParentGood, "good");
+      addSelectAllButton(ParentGood, "good");
 
       for( var i = 0 ; i < NbrOfBadFlags ; i++ )
       {
@@ -93,5 +94,5 @@
         document.getElementById(ParentBad).appendChild(NewLabel);
       }
 
-      //addSelectAllButton(ParentBad, "bad");
+      addSelectAllButton(ParentBad, "bad");
      });
