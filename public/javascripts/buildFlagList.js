@@ -1,42 +1,3 @@
-
-       var USERWANTTOSELECT = { good: true, bad: false}
-       var addSelectAllButton = function (parent, type) {
-
-          var select = document.createElement("BUTTON");
-          select.innerHTML = "(un)select all";
-
-        
-          select.onclick = () => {
-            
-            const parentObj = document.getElementById(parent);
-            const childs = parentObj.children;
-            if ( childs ) {
-
-              for (var c = 0; c < childs.length; c++ ) {
-                
-                if ( childs[ c ].tagName == "INPUT" ) {
-                  console.log(childs[ c ])
-                  if ( USERWANTTOSELECT[type] ) 
-                    childs[c].setAttribute('checked', true)
-                  else {
-                    childs[c].setAttribute('checked', true)
-        
-                  }
-                }
-
-              }
-      
-              USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
-            }
-    
-          }
-    
-          document.getElementById(parent).appendChild(select);
-  
-       }
-  
-  
-  
       var JsonData;
       var ParentGood="goodflags";
       var ParentBad ="badflags";
@@ -69,7 +30,6 @@
         document.getElementById(ParentGood).appendChild(NewLabel);
 
       }
-      addSelectAllButton(ParentGood, "good");
 
       for( var i = 0 ; i < NbrOfBadFlags ; i++ )
       {
@@ -91,5 +51,4 @@
         document.getElementById(ParentBad).appendChild(NewLabel);
       }
 
-      addSelectAllButton(ParentBad, "bad");
      });

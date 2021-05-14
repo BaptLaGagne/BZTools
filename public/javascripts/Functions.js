@@ -218,6 +218,42 @@ function addPlugin(){
     counter_plugin++;
 }; 
 
+var USERWANTTOSELECT = { good: true, bad: false};
+function selectAll(parent, type) {
+
+    const parentObj = document.getElementById(parent);
+    const childs = parentObj.children;
+    if ( childs ) {
+
+      for (var c = 0; c < childs.length; c++ ) {
+        
+        if ( childs[ c ].tagName == "INPUT" ) {
+          console.log(childs[ c ])
+          if ( USERWANTTOSELECT[type] ) 
+            childs[c].setAttribute('checked', true)
+          else {
+            childs[c].setAttribute('checked', true)
+
+          }
+        }
+
+      }
+
+      USERWANTTOSELECT[type]!=USERWANTTOSELECT[type]
+    }
+
+ }
+
+function selectAllGood() {
+
+    selectAll("goodflags", "good");
+}
+
+function selectAllBad() {
+
+    selectAll("badflags", "bad");
+}
+
 /********************** Save form in local storage when form change ********************/
 /*document.getElementById("ConfigForm").addEventListener('change', function () {
     alert("change");
